@@ -28,4 +28,7 @@ func ConectaComBancoDeDados() {
 	if err := DB.AutoMigrate(&models.Aluno{}); err != nil {
 		log.Fatalf("Erro no AutoMigrate: %v", err)
 	}
+	if err := r.Run(); err != nil {
+		log.Fatalf("Erro ao iniciar o servidor: %v", err)
+	}
 }
